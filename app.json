@@ -16,15 +16,28 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./src/assets/images/adaptive-icon2.png",
+        "foregroundImage": "./src/assets/images/adaptive-icon3.png",
         "backgroundColor": "#F1F7FC"
       },
       "package": "com.DevMinds.haya",
+      "icon": "./src/assets/images/icon.png",
       "versionCode": 2,
       "splash": {
         "image": "./src/assets/images/splash.png",
         "resizeMode": "contain",
         "backgroundColor": "#F1F7FC"
+      },
+      "permissions": [
+        "INTERNET"
+      ],
+      "networkSecurityConfig": {
+        "cleartextTrafficPermitted": true,
+        "domains": [
+          {
+            "includeSubdomains": true,
+            "domain": "haya.devmindslab.com"
+          }
+        ]
       }
     },
     "plugins": [
