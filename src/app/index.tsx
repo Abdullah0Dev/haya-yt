@@ -14,8 +14,7 @@ import { router } from "expo-router";
 const WelcomePage = () => {
   return (
     <>
-      <LinearGradient
-        // className="flex flex-1 h-full"
+      <LinearGradient 
         style={{
           flex: 1,
         }}
@@ -23,7 +22,7 @@ const WelcomePage = () => {
         colors={["#1F2159", "#1A1A38"]}
       >
         <Image
-          source={require("@/assets/welcome-img.png")}
+          source={require("@/assets/welcome-img2.png")}
           className={`w-full rotate-4 ${
             Platform.OS === "ios" && "mt-14"
           }  h-[450px] object-contain`}
@@ -36,8 +35,12 @@ const WelcomePage = () => {
         </Text>
         {/* sub texts */}
         <Text className="text-white text-base mt-6 px-9">
-          it's time to protect your images online, easily with a few clicks you
-          can protect your image privacy and hide sensitive area
+          ✨Protect your images online like a pro! With just a few clicks, you
+          can safeguard your privacy and blur faces effortlessly. Take control
+          of your photos today!
+        </Text>
+        <Text className="text-center self-center flex w-full">
+          ⭐️⭐️⭐️⭐️⭐️
         </Text>
         <View className="flex absolute bottom-6 w-full flex-row justify-between px-9 items-center">
           <View className="flex flex-row gap-x-1">
@@ -46,12 +49,11 @@ const WelcomePage = () => {
           </View>
           <TouchableOpacity
             onPress={() => router.push("/home")}
-            className="w-16 h-16 flex items-center justify-center rounded-2xl bg-green-400"  
+            className="w-16 h-16 flex items-center justify-center rounded-2xl bg-green-400"
           >
             <Feather
               style={{ alignSelf: "center", fontSize: 32 }}
-              name="arrow-up-right"
-              // size={24}
+              name="arrow-up-right" 
               color="#00120D"
             />
           </TouchableOpacity>

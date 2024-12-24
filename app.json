@@ -2,11 +2,30 @@
   "expo": {
     "scheme": "acme",
     "userInterfaceStyle": "automatic",
-    "orientation": "default",
+    "orientation": "portrait",
     "newArchEnabled": true,
+    "icon": "./src/assets/images/icon.png",
     "web": {
       "output": "static",
-      "bundler": "metro"
+      "bundler": "metro",
+      "favicon": "./src/assets/images/favicon.png"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.DevMinds.haya"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./src/assets/images/adaptive-icon2.png",
+        "backgroundColor": "#F1F7FC"
+      },
+      "package": "com.DevMinds.haya",
+      "versionCode": 2,
+      "splash": {
+        "image": "./src/assets/images/splash.png",
+        "resizeMode": "contain",
+        "backgroundColor": "#F1F7FC"
+      }
     },
     "plugins": [
       [
@@ -14,9 +33,34 @@
         {
           "origin": "https://n"
         }
+      ],
+      "expo-asset",
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "networkSecurityConfig": {
+              "cleartextTrafficPermitted": true,
+              "domains": [
+                {
+                  "includeSubdomains": true,
+                  "domain": "haya.devmindslab.com"
+                }
+              ]
+            }
+          }
+        }
       ]
     ],
     "name": "haya",
-    "slug": "haya"
+    "slug": "haya",
+    "extra": {
+      "router": {
+        "origin": "https://n"
+      },
+      "eas": {
+        "projectId": "096a337b-e70c-41f5-8d13-68a72c7c7952"
+      }
+    }
   }
 }
