@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
   ActivityIndicator,
   Platform,
+  ScrollView,
 } from "react-native";
 import React, { useState } from "react";
 import mime from "mime";
@@ -122,12 +123,12 @@ const HomePage = () => {
       const data = new FormData();
       data.append("image", {
         uri: newImageUri, // Fix for Android
-        type: mime.getType(newImageUri),
+        type: mime.getType(newImageUri), // image -> image/png
         name: newImageUri.split("/").pop(),
       });
       setLoadingResults(true);
       const response = await axios.post(
-        `http://haya.devmindslab.com/blur-face`,
+        `https://haya.devmindslab.com:8443/blur-face`,
         data,
         {
           headers: {
@@ -138,7 +139,7 @@ const HomePage = () => {
       );
 
       // const gender = response.data.gender[0];
-      // const age = response.data.age[0];
+      // const age = response.data.age[0]
       const ImageUrl = response.data.imageUrl;
       console.log("Image Url:", `${ImageUrl}`);
       const finalImageUrl = `${ImageUrl}`;
@@ -161,7 +162,7 @@ const HomePage = () => {
   const ANDROID_DEVICE = Platform.OS === "android";
 
   return (
-    <SafeAreaView className="bg-[#07091F] h-full">
+    <ScrollView className="bg-[#07091F] min-h-full">
       <View>
         <Text className="text-white font-bold text-2xl text-center">
           My Studio
@@ -289,7 +290,7 @@ const HomePage = () => {
         <Toast />
         <StatusBar barStyle="light-content" backgroundColor={"#07091F"} />
       </View>
-    </SafeAreaView>
+    </ScrollView>
   );
 };
 

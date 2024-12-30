@@ -56,7 +56,7 @@
               "cleartextTrafficPermitted": true,
               "domains": [
                 {
-                  "includeSubdomains": true,
+                  "includeSubdaomains": true,
                   "domain": "haya.devmindslab.com"
                 }
               ]

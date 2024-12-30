@@ -5,6 +5,7 @@ import {
   StatusBar,
   Platform,
   TouchableOpacity,
+  ScrollView,
 } from "react-native";
 import React from "react";
 import { LinearGradient } from "expo-linear-gradient";
@@ -14,9 +15,10 @@ import { router } from "expo-router";
 const WelcomePage = () => {
   return (
     <>
-      <LinearGradient 
+      <LinearGradient
         style={{
           flex: 1,
+          height: "100%", // Ensure it takes the full height
         }}
         // Background Linear Gradient
         colors={["#1F2159", "#1A1A38"]}
@@ -25,7 +27,7 @@ const WelcomePage = () => {
           source={require("@/assets/welcome-img2.png")}
           className={`w-full rotate-4 ${
             Platform.OS === "ios" && "mt-14"
-          }  h-[450px] object-contain`}
+          } h-[58vh]  max-sm:h-[48vh] object-contain`}
           resizeMode="contain"
         />
 
@@ -53,7 +55,7 @@ const WelcomePage = () => {
           >
             <Feather
               style={{ alignSelf: "center", fontSize: 32 }}
-              name="arrow-up-right" 
+              name="arrow-up-right"
               color="#00120D"
             />
           </TouchableOpacity>
